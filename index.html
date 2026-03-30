@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#faf7f2">
+    <title>MineSense</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <a href="#" class="logo" data-tab="home">
+            <span class="logo-icon">◈</span>
+            <span class="logo-text">MineSense</span>
+        </a>
+        <nav class="main-nav">
+            <button class="nav-tab active" data-tab="home">Home</button>
+            <button class="nav-tab" data-tab="map">Map</button>
+            <button class="nav-tab" data-tab="team">Team</button>
+            <button class="nav-tab" data-tab="stories">Stories</button>
+            <button class="nav-tab" data-tab="dashboard">Dashboard</button>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- HOME TAB -->
+        <section id="tab-home" class="tab-panel active">
+            <div class="hero">
+                <h1 class="hero-title">Who Powers the Energy Transition?</h1>
+                <p class="hero-subtitle">Electric vehicles, batteries, and clean technologies rely on cobalt and other critical minerals. Around the world, the people who extract these resources often face severe challenges, including child labor, forced labor, armed conflict near mines, extreme poverty, and exposure to toxic substances. MineSense highlights these human and environmental impacts while placing them in the broader context of global mineral extraction.</p>
+            </div>
+
+            <div class="impact-statement home-spotlight">
+                DRC &amp; cobalt: No country is more central to the battery economy&rsquo;s human cost. Tens of thousands of children work in or near mines; industrial and artisanal cobalt production sit alongside conflict-affected regions; communities report contaminated water, reproductive health crises, and daily wages that can fall below two dollars. This is not a side issue for the energy transition&mdash;it is one of its defining injustices.
+            </div>
+
+            <div class="content-block">
+                <h2>Demand Is Accelerating Fast</h2>
+                <div class="stats-grid stats-linked">
+                    <a href="https://www.iea.org/reports/global-critical-minerals-outlook-2025/overview-of-outlook-for-key-minerals" target="_blank" rel="noopener" class="stat-card stat-link">
+                        <span class="stat-number">+50%</span>
+                        <span class="stat-label">Copper demand projected by 2040</span>
+                    </a>
+                    <a href="https://www.iea.org/reports/global-critical-minerals-outlook-2025" target="_blank" rel="noopener" class="stat-card stat-link">
+                        <span class="stat-number">2×</span>
+                        <span class="stat-label">Cobalt &amp; nickel demand doubling by 2040</span>
+                    </a>
+                    <a href="https://www.iea.org/reports/global-critical-minerals-outlook-2025" target="_blank" rel="noopener" class="stat-card stat-link">
+                        <span class="stat-number">9×</span>
+                        <span class="stat-label">Lithium demand, nearly tenfold increase</span>
+                    </a>
+                    <a href="https://globalwitness.org/en/campaigns/natural-resource-governance/critical-mineral-mines-tied-111-violent-incidents-and-protests-average-year/" target="_blank" rel="noopener" class="stat-card stat-link">
+                        <span class="stat-number">~111</span>
+                        <span class="stat-label">Conflicts per year linked to critical mineral mining (2021 to 2023)</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <h2>The DRC &amp; Cobalt: Ground Zero</h2>
+                <div class="stats-grid stats-linked">
+                    <a href="https://www.humanium.org/en/the-current-state-of-child-labour-in-cobalt-mines-in-the-democratic-republic-of-the-congo/" target="_blank" rel="noopener" class="stat-card stat-link">
+                        <span class="stat-number">40,000+</span>
+                        <span class="stat-label">Children in cobalt mining (DRC)</span>
+                    </a>
+                    <a href="https://www.iea.org/reports/global-critical-minerals-outlook-2025" target="_blank" rel="noopener" class="stat-card stat-link">
+                        <span class="stat-number">~70%</span>
+                        <span class="stat-label">Share of global cobalt mined in the DRC</span>
+                    </a>
+                    <a href="https://www.worldbank.org/en/country/drc" target="_blank" rel="noopener" class="stat-card stat-link">
+                        <span class="stat-number">73%</span>
+                        <span class="stat-label">Of DRC population below poverty line</span>
+                    </a>
+                    <a href="https://news.mongabay.com/2024/03/global-cobalt-rush-drives-toxic-toll-near-drc-mines/" target="_blank" rel="noopener" class="stat-card stat-link">
+                        <span class="stat-number">&lt;$2</span>
+                        <span class="stat-label">Daily wage for many artisanal miners (DRC)</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <h2>Critical Minerals at a Glance</h2>
+                <div class="minerals-list">
+                    <a href="country-drc.html" class="mineral-item mineral-item--priority mineral-item-link">
+                        <h3>Cobalt (Democratic Republic of the Congo)</h3>
+                        <p>Cobalt powers EV batteries and electronics; the Democratic Republic of the Congo produces roughly 70% of the world&rsquo;s supply. Artisanal and industrial mining overlap with extreme poverty, documented child labor, forced labor concerns, and armed-group presence in eastern regions. Communities face contaminated water, health crises, and wages that can be under two dollars a day. Read the full country report for more detail.</p>
+                    </a>
+                    <div class="mineral-item">
+                        <h3>Lithium</h3>
+                        <p>Drives the battery revolution. Chile&rsquo;s Atacama salt flats and Argentina&rsquo;s brine pools are iconic sources, but extraction can draw down scarce water in deserts where Indigenous communities rely on the same aquifers. Australia&rsquo;s hard-rock mines and refining in China and elsewhere add new layers of energy use and land use. Bolivia holds untapped reserves. Across these regions, disputes over land rights, water access, and who benefits from the transition remain unresolved.</p>
+                    </div>
+                    <div class="mineral-item">
+                        <h3>Rare Earth Elements</h3>
+                        <p>Critical for magnets in EVs and wind turbines, electronics, and defense systems. China dominates mining and especially refining, which concentrates geopolitical risk and environmental burden in specific industrial zones. Smaller producers (e.g. Myanmar, Australia) raise separate questions about governance, labor, and habitat damage. The full chain from mine to magnet often lacks transparency for consumers and policymakers alike.</p>
+                    </div>
+                    <div class="mineral-item">
+                        <h3>Coltan</h3>
+                        <p>Used in capacitors for phones and laptops. The Democratic Republic of the Congo and Rwanda are key sources. Eastern DRC has long been associated with conflict minerals: armed groups, informal taxation of trade routes, and violence near mining areas. Due diligence and traceability schemes exist, but implementation remains uneven and communities still report insecurity and exploitation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-block">
+                <h2>Take Action</h2>
+                <p>Stay informed. Demand transparency. Support ethical sourcing initiatives&mdash;and push for stronger public oversight of supply chains, corporate accountability, and independent verification wherever you buy or invest.</p>
+                <div class="cta-buttons">
+                    <button class="cta-button" data-tab="map">Explore the Map</button>
+                    <button class="cta-button cta-button-secondary" data-tab="dashboard">View Dashboard</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEAM TAB -->
+        <section id="tab-team" class="tab-panel">
+            <div class="tab-header">
+                <h1>Our Team</h1>
+                <p>Researchers, advocates, and working professionals dedicated to exposing exploitation in critical mineral supply chains.</p>
+            </div>
+
+            <div class="team-grid">
+                <a href="https://www.linkedin.com/in/evanpark8/" target="_blank" rel="noopener" class="team-card team-card-link">
+                    <div class="team-photo"><img src="assets/team-evan.png" alt="Evan Park"></div>
+                    <h3>Evan Park</h3>
+                    <span class="team-role">Tech Lead</span>
+                    <p>Evan is passionate about leveraging technology to empower communities. He supports the project by developing tools for mapping, documenting, and organizing project activities, helping youth engage effectively with local challenges.</p>
+                </a>
+                <a href="https://www.linkedin.com/in/sodgerel-g/" target="_blank" rel="noopener" class="team-card team-card-link">
+                    <div class="team-photo"><img src="assets/team-sodgerel.png" alt="Sodgerel Gansukh"></div>
+                    <h3>Sodgerel Gansukh</h3>
+                    <span class="team-role">Project Lead</span>
+                    <p>Sodgerel oversees the overall coordination and implementation of the project. With experience in project design and youth engagement, they ensure the team stays on track while fostering meaningful participation in cobalt-affected communities.</p>
+                </a>
+                <a href="https://www.linkedin.com/in/arvind-kumar-iitm/" target="_blank" rel="noopener" class="team-card team-card-link">
+                    <div class="team-photo"><img src="assets/team-arvind.png" alt="Arvind Kumar"></div>
+                    <h3>Arvind Kumar</h3>
+                    <span class="team-role">Youth Representative</span>
+                    <p>Arvind brings the youth perspective to every stage of the project. He supports coordination, communication, and external representation, ensuring the voices of young people are central to the project&rsquo;s planning and activities.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- STORIES TAB -->
+        <section id="tab-stories" class="tab-panel">
+            <div class="tab-header">
+                <h1>Stories from the Ground</h1>
+                <p>First-hand accounts and investigations from communities affected by critical mineral extraction.</p>
+            </div>
+
+            <div class="stories-list">
+                <article class="story-card">
+                    <a href="https://www.theguardian.com/global-development/2024/mar/28/staggering-rise-in-women-with-reproductive-health-issues-near-drc-cobalt-mines-study" target="_blank" rel="noopener" class="story-link">
+                        <img src="assets/story-drc-reproductive-health.png" alt="Woman near contaminated water in DRC cobalt mining community" class="story-img">
+                        <span class="story-tag">DRC • Cobalt</span>
+                        <h3>'Staggering' Rise in Women With Reproductive Health Issues Near DRC Cobalt Mines</h3>
+                        <p class="story-excerpt">A Raid and Afrewatch investigation reveals reports of miscarriages, infections and birth defects among women and girls in mining communities. More than half of 144 interviewees raised concerns about reproductive health, linked to contact with contaminated water.</p>
+                        <span class="story-date">March 2024</span>
+                    </a>
+                </article>
+                <article class="story-card">
+                    <a href="https://news.mongabay.com/2024/03/global-cobalt-rush-drives-toxic-toll-near-drc-mines/" target="_blank" rel="noopener" class="story-link">
+                        <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=600&q=80" alt="Mining excavation and land" class="story-img">
+                        <span class="story-tag">DRC • Cobalt</span>
+                        <h3>Global Cobalt Rush Drives Toxic Toll Near DRC Mines</h3>
+                        <p class="story-excerpt">Communities near cobalt mines report contaminated water, reduced crop yields, and severe health impacts. Nearly all surveyed residents raised concerns about reproductive health or that of family members.</p>
+                        <span class="story-date">March 2024</span>
+                    </a>
+                </article>
+                <article class="story-card">
+                    <a href="https://reliefweb.int/report/democratic-republic-congo/job-doesnt-deserve-me-catch-clubs-help-stop-child-labour-drcs-deadly-cobalt-mines" target="_blank" rel="noopener" class="story-link">
+                        <img src="assets/story-4-classroom.png" alt="Children and education" class="story-img">
+                        <span class="story-tag">DRC • Cobalt</span>
+                        <h3>"This Job Doesn't Deserve Me": Catch-Up Clubs Help Stop Child Labour in DRC</h3>
+                        <p class="story-excerpt">Save the Children's programs help children return to education after mine work. Tens of thousands of children still work in deadly conditions daily.</p>
+                        <span class="story-date">June 2024</span>
+                    </a>
+                </article>
+                <article class="story-card">
+                    <a href="https://www.reuters.com/legal/us-appeals-court-dismisses-child-labor-case-against-tech-companies-2024-03-05/" target="_blank" rel="noopener" class="story-link">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80" alt="Technology and supply chains" class="story-img">
+                        <span class="story-tag">USA • DRC</span>
+                        <h3>US Court Sides With Tech Companies Over Child Labor in Africa</h3>
+                        <p class="story-excerpt">A federal appeals court ruled that purchasing cobalt through global supply chains does not constitute "participation in a venture" involving forced labor.</p>
+                        <span class="story-date">March 2024</span>
+                    </a>
+                </article>
+                <article class="story-card">
+                    <a href="https://www.theguardian.com/global-development/2026/jan/01/chile-lithium-rio-tinto-fears-colla-indigenous-water-atacama-ecosystem" target="_blank" rel="noopener" class="story-link">
+                        <img src="assets/story-1-lithium-brine.png" alt="Chile lithium brine evaporation ponds" class="story-img">
+                        <span class="story-tag">Chile • Lithium</span>
+                        <h3>'The Source of All Life Is Here': Plan to Mine Lithium Sparks Water Fears</h3>
+                        <p class="story-excerpt">Indigenous communities in Chile's Atacama describe the salt flat as sacred. Mining plans threaten water sources critical for agriculture, livestock, and survival.</p>
+                        <span class="story-date">January 2026</span>
+                    </a>
+                </article>
+                <article class="story-card">
+                    <a href="https://www.reuters.com/world/americas/chile-revs-up-lithium-plans-indigenous-people-demand-more-control-2025-04-07/" target="_blank" rel="noopener" class="story-link">
+                        <img src="assets/story-2-indigenous.png" alt="Indigenous community and land" class="story-img">
+                        <span class="story-tag">Chile • Lithium</span>
+                        <h3>Chile Revs Up Lithium Plans, Indigenous People Demand More Control</h3>
+                        <p class="story-excerpt">As Chile accelerates lithium extraction, Lickanantay communities are demanding unprecedented governance roles in decision-making about their ancestral lands.</p>
+                        <span class="story-date">April 2025</span>
+                    </a>
+                </article>
+                <article class="story-card">
+                    <a href="https://news.mongabay.com/2024/12/as-lithium-mining-bleeds-atacama-salt-flat-dry-indigenous-communities-hit-back/" target="_blank" rel="noopener" class="story-link">
+                        <img src="assets/story-water-wars.png" alt="Water Wars in the Atacama: flamingos and shallow water in arid landscape" class="story-img">
+                        <span class="story-tag">Chile • Lithium</span>
+                        <h3>Water Wars in the Atacama</h3>
+                        <p class="story-excerpt">Lithium extraction requires massive amounts of water in one of the driest places on Earth. Indigenous communities describe dwindling water tables and the fight to protect ancestral lands.</p>
+                        <span class="story-date">December 2024</span>
+                    </a>
+                </article>
+                <article class="story-card">
+                    <a href="https://news.mongabay.com/2024/02/indonesian-nickel-project-harms-environment-and-human-rights-report-says/" target="_blank" rel="noopener" class="story-link">
+                        <img src="assets/story-indonesia-nickel.png" alt="Indonesia nickel project industrial complex" class="story-img">
+                        <span class="story-tag">Indonesia • Nickel</span>
+                        <h3>Indonesia Nickel Smelters and Pollution</h3>
+                        <p class="story-excerpt">Indonesia's nickel smelting boom has displaced villages, polluted rivers, and left workers in hazardous conditions. A look at the environmental cost of the EV supply chain shift.</p>
+                        <span class="story-date">September 2024</span>
+                    </a>
+                </article>
+                <article class="story-card">
+                    <a href="https://www.globalwitness.org/en/campaigns/transition-minerals/the-critical-minerals-scramble-how-the-race-for-resources-is-fuelling-conflict-and-inequality/" target="_blank" rel="noopener" class="story-link">
+                        <img src="assets/story-critical-minerals-race.png" alt="Critical minerals and global politics" class="story-img">
+                        <span class="story-tag">Global</span>
+                        <h3>How the Race for Critical Minerals Fuels Conflict and Inequality</h3>
+                        <p class="story-excerpt">71-81% of critical mineral production is controlled by companies from wealthy economies, while social and environmental harms fall on producer nations.</p>
+                        <span class="story-date">March 2025</span>
+                    </a>
+                </article>
+                <article class="story-card">
+                    <a href="https://www.iea.org/reports/global-critical-minerals-outlook-2024" target="_blank" rel="noopener" class="story-link">
+                        <img src="assets/story-5-mineral-maps.png" alt="Wind turbines and renewable energy" class="story-img">
+                        <span class="story-tag">Global</span>
+                        <h3>IEA: Critical Minerals and the Clean Energy Challenges</h3>
+                        <p class="story-excerpt">Supply gaps, concentration risks, and the environmental and social impacts of scaling up critical mineral production for the energy transition.</p>
+                        <span class="story-date">2024</span>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- DASHBOARD TAB -->
+        <section id="tab-dashboard" class="tab-panel">
+            <div class="tab-header">
+                <h1>Data Dashboard</h1>
+                <p>Tracking exploitation risks, supply chain transparency, and policy developments.</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-card wide">
+                    <h3>Countries at Highest Risk</h3>
+                    <div class="risk-list">
+                        <a href="country-drc.html" class="risk-item risk-link" target="_blank">
+                            <span class="risk-country">Democratic Republic of Congo</span>
+                            <span class="risk-level high">Very High</span>
+                            <span class="risk-detail">Cobalt, coltan, copper: child labor, conflict minerals. Click for full report.</span>
+                        </a>
+                        <a href="country-indonesia.html" class="risk-item risk-link" target="_blank">
+                            <span class="risk-country">Indonesia</span>
+                            <span class="risk-level high">High</span>
+                            <span class="risk-detail">Nickel: environmental damage, labor rights. Click for full report.</span>
+                        </a>
+                        <a href="country-china.html" class="risk-item risk-link" target="_blank">
+                            <span class="risk-country">China</span>
+                            <span class="risk-level medium">Medium-High</span>
+                            <span class="risk-detail">Rare earths refining: environmental, opacity. Click for full report.</span>
+                        </a>
+                        <a href="country-bolivia.html" class="risk-item risk-link" target="_blank">
+                            <span class="risk-country">Bolivia</span>
+                            <span class="risk-level medium">Medium</span>
+                            <span class="risk-detail">Lithium: community displacement, water stress. Click for full report.</span>
+                        </a>
+                        <a href="country-zimbabwe.html" class="risk-item risk-link" target="_blank">
+                            <span class="risk-country">Zimbabwe</span>
+                            <span class="risk-level medium">Medium</span>
+                            <span class="risk-detail">Lithium, diamonds: governance, labor. Click for full report.</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Key Minerals & Sources</h3>
+                    <ul class="mineral-sources">
+                        <li>Cobalt: DRC (~70%), Indonesia, Australia</li>
+                        <li>Lithium: Australia, Chile, China, Argentina</li>
+                        <li>Rare Earths: China, Myanmar, Australia</li>
+                        <li>Nickel: Indonesia, Philippines, Russia</li>
+                        <li>Graphite: China, Mozambique, Madagascar</li>
+                    </ul>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Key Importing Countries</h3>
+                    <ul class="mineral-sources">
+                        <li>China: Cobalt, lithium, nickel, rare earths, graphite</li>
+                        <li>United States: Cobalt, lithium, copper, rare earths</li>
+                        <li>Japan: Cobalt, lithium, nickel, rare earths</li>
+                        <li>South Korea: Lithium, cobalt, nickel</li>
+                        <li>European Union: Cobalt, lithium, rare earths</li>
+                    </ul>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Policy Updates</h3>
+                    <ul class="policy-list">
+                        <li><a href="https://commission.europa.eu/news-and-media/news/new-measures-secure-raw-materials-and-strengthen-eus-economic-security-2025-12-03_en" target="_blank" rel="noopener">EU: RESourceEU Action Plan adopted December 2025</a></li>
+                        <li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R1561" target="_blank" rel="noopener">EU: Battery due diligence postponed to August 2027</a></li>
+                        <li><a href="https://www.govtrack.us/congress/bills/119/s2550/text" target="_blank" rel="noopener">U.S.: Critical Minerals Partnership Act (S. 2550)</a></li>
+                        <li><a href="https://faircobaltalliance.org/child-labour-remediation/" target="_blank" rel="noopener">Fair Cobalt Alliance: Child remediation programs</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAP TAB -->
+        <section id="tab-map" class="tab-panel tab-panel-map">
+            <div class="tab-header map-tab-header">
+                <h1>Supply Chain Map</h1>
+                <p>Mineral-producing countries are highlighted. Hover over a country to see arrows pointing to importing nations.</p>
+            </div>
+            <div id="map-container">
+                <div id="map"></div>
+                <div id="map-legend">
+                    <span class="legend-title">Mineral producers</span>
+                    <span class="legend-hint">Hover to show export arrows</span>
+                </div>
+            </div>
+            <div class="product-map-section">
+                <h2 class="product-map-title">Where Do Your Products Come From?</h2>
+                <p class="product-map-subtitle">Hover over a product to see which countries supply its critical minerals</p>
+                <div class="product-cards">
+                    <div class="product-card" data-minerals="COD,CHL,IDN,AUS,CHN,BOL,ARG,ZWE">
+                        <div class="product-icon">🔋</div>
+                        <span class="product-name">EV Car Battery</span>
+                        <span class="product-minerals">Lithium, Cobalt, Nickel, Graphite</span>
+                    </div>
+                    <div class="product-card" data-minerals="CHN,MMR,AUS">
+                        <div class="product-icon">☀️</div>
+                        <span class="product-name">Solar Panel</span>
+                        <span class="product-minerals">Rare Earths, Silver, Silicon</span>
+                    </div>
+                    <div class="product-card" data-minerals="COD,RWA,CHN">
+                        <div class="product-icon">📱</div>
+                        <span class="product-name">Smartphone</span>
+                        <span class="product-minerals">Cobalt, Coltan, Rare Earths</span>
+                    </div>
+                    <div class="product-card" data-minerals="CHN,AUS,COD,IDN">
+                        <div class="product-icon">🌬️</div>
+                        <span class="product-name">Wind Turbine</span>
+                        <span class="product-minerals">Rare Earths, Cobalt, Copper</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>MineSense: Raising Awareness Of Exploitation In Mineral Supply Chains</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="map.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
