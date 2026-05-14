@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="MineralSense">
+  <rect width="32" height="32" rx="6" fill="#faf7f2"/>
+  <path fill="#b86b24" d="M16 5l10 9-10 18L6 14z"/>
+  <path fill="#d4924a" d="M6 14h20L16 5z"/>
+  <path fill="#9e5d1f" opacity="0.9" d="M16 23V14l10 0z"/>
+  <path fill="#c9823a" opacity="0.95" d="M16 23V14L6 14z"/>
+</svg>

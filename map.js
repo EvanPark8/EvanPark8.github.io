@@ -235,7 +235,7 @@
         });
     }
 
-    window.MineSenseMap = {
+    window.MineralSenseMap = {
         init: initMap,
         ensureInit: function() {
             initMap();

@@ -1,4 +1,4 @@
-// Tab navigation for MineSense
+// Tab navigation for MineralSense
 
 document.addEventListener('DOMContentLoaded', () => {
     const rawHash = (window.location.hash || '#home').replace('#', '') || 'home';
@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Init map when first viewing map tab
-        if (targetId === 'map' && window.MineSenseMap) {
-            window.MineSenseMap.ensureInit();
+        if (targetId === 'map' && window.MineralSenseMap) {
+            window.MineralSenseMap.ensureInit();
         }
         window.history.replaceState(null, '', '#' + targetId);
     }
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const initPanel = document.getElementById(`tab-${initialTab}`);
     if (initTabBtn) initTabBtn.classList.add('active');
     if (initPanel) initPanel.classList.add('active');
-    if (initialTab === 'map' && window.MineSenseMap) setTimeout(() => window.MineSenseMap.ensureInit(), 100);
+    if (initialTab === 'map' && window.MineralSenseMap) setTimeout(() => window.MineralSenseMap.ensureInit(), 100);
 
     // Nav tab clicks
     tabs.forEach(tab => {
@@ -61,17 +61,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Product map: hover to highlight countries
     document.querySelectorAll('.product-card').forEach(card => {
         card.addEventListener('mouseenter', () => {
-            if (window.MineSenseMap) {
-                window.MineSenseMap.ensureInit();
+            if (window.MineralSenseMap) {
+                window.MineralSenseMap.ensureInit();
                 const minerals = card.dataset.minerals;
-                if (minerals && window.MineSenseMap.highlightProductCountries) {
-                    setTimeout(() => window.MineSenseMap.highlightProductCountries(minerals.split(',')), 200);
+                if (minerals && window.MineralSenseMap.highlightProductCountries) {
+                    setTimeout(() => window.MineralSenseMap.highlightProductCountries(minerals.split(',')), 200);
                 }
             }
         });
         card.addEventListener('mouseleave', () => {
-            if (window.MineSenseMap && window.MineSenseMap.resetProductHighlight) {
-                window.MineSenseMap.resetProductHighlight();
+            if (window.MineralSenseMap && window.MineralSenseMap.resetProductHighlight) {
+                window.MineralSenseMap.resetProductHighlight();
             }
         });
     });
