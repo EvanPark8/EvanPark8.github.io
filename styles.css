@@ -436,6 +436,37 @@ a.mineral-item-link:hover {
     grid-column: 1 / -1;
 }
 
+.product-dashboard-list {
+    display: grid;
+    gap: 0.85rem;
+}
+
+.product-dashboard-item {
+    display: grid;
+    grid-template-columns: minmax(130px, 0.8fr) minmax(220px, 1.2fr) minmax(260px, 1.6fr);
+    gap: 0.75rem;
+    align-items: center;
+    padding: 0.9rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.product-dashboard-name {
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.product-dashboard-materials {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.product-dashboard-sources {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
 /* Content blocks */
 .content-block {
     margin-bottom: 3rem;
@@ -598,6 +629,28 @@ a.mineral-item-link:hover {
     color: var(--text-secondary);
 }
 
+.stories-intro-card {
+    margin-top: 1rem;
+    padding: 1.25rem 1.4rem;
+    background: linear-gradient(135deg, rgba(184, 107, 36, 0.1), #fffefb);
+    border: 1px solid rgba(184, 107, 36, 0.24);
+    border-left: 4px solid var(--accent);
+    border-radius: 12px;
+    box-shadow: var(--shadow-soft);
+}
+
+.stories-intro-card p {
+    color: var(--text-secondary);
+    max-width: 760px;
+}
+
+.stories-intro-card .stories-intro-lead {
+    margin-bottom: 0.35rem;
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 1.08rem;
+}
+
 /* Team */
 .team-grid {
     display: grid;
@@ -720,7 +773,7 @@ a.mineral-item-link:hover {
 .dashboard-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 1.5rem;
     box-shadow: var(--shadow-soft);
 }
@@ -730,10 +783,20 @@ a.mineral-item-link:hover {
 }
 
 .dashboard-card h3 {
-    font-size: 1rem;
+    font-size: 1.08rem;
     font-weight: 600;
     margin-bottom: 1rem;
     color: var(--text-primary);
+}
+
+.dashboard-card-kicker {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
 }
 
 .risk-list {
@@ -747,9 +810,10 @@ a.mineral-item-link:hover {
     grid-template-columns: 1fr auto;
     gap: 0.5rem 1rem;
     align-items: start;
-    padding: 0.75rem;
+    padding: 0.9rem;
     background: var(--bg-secondary);
-    border-radius: 6px;
+    border: 1px solid transparent;
+    border-radius: 10px;
 }
 
 .risk-country {
@@ -803,6 +867,19 @@ a.mineral-item-link:hover {
 
 .policy-list a:hover {
     color: var(--accent);
+}
+
+.policy-list-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.75rem;
+}
+
+.policy-list-links li {
+    padding: 0.85rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 10px;
 }
 
 /* Map tab */
@@ -1208,6 +1285,10 @@ a.mineral-item-link:hover {
     }
 
     .country-info-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .product-dashboard-item {
         grid-template-columns: 1fr;
     }
 }

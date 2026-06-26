@@ -183,8 +183,10 @@
         <section id="tab-stories" class="tab-panel">
             <div class="tab-header">
                 <h1>Stories from the Ground</h1>
-                <p>Critical minerals are often discussed in terms of numbers: reserves, demand, prices, and supply security. But behind those numbers are real places and people.</p>
-                <p>Here we bring together stories, investigations, and reports from mineral-producing regions. Explore how cobalt, lithium, nickel, copper, graphite, and other materials connect clean technologies to questions of water, labour, health, land, governance, and accountability.</p>
+                <div class="stories-intro-card">
+                    <p class="stories-intro-lead">Behind every mineral number is a real place and a real community.</p>
+                    <p>Explore stories and investigations from mineral-producing regions, and see how clean technologies connect to water, labour, health, land, governance, and accountability.</p>
+                </div>
             </div>
 
             <div class="stories-list">
@@ -290,58 +292,90 @@
 
             <div class="dashboard-grid">
                 <div class="dashboard-card wide">
-                    <h3>Countries at Highest Risk</h3>
+                    <span class="dashboard-card-kicker">Reports</span>
+                    <h3>Country Risk Reports</h3>
                     <div class="risk-list">
-                        <a href="country-drc.html" class="risk-item risk-link" target="_blank">
+                        <a href="country-drc.html" class="risk-item risk-link">
                             <span class="risk-country">Democratic Republic of Congo</span>
                             <span class="risk-level high">Very High</span>
                             <span class="risk-detail">Cobalt, coltan, copper: child labor, conflict minerals. Click for full report.</span>
                         </a>
-                        <a href="country-indonesia.html" class="risk-item risk-link" target="_blank">
+                        <a href="country-indonesia.html" class="risk-item risk-link">
                             <span class="risk-country">Indonesia</span>
                             <span class="risk-level high">High</span>
                             <span class="risk-detail">Nickel: environmental damage, labor rights. Click for full report.</span>
                         </a>
-                        <a href="country-china.html" class="risk-item risk-link" target="_blank">
+                        <a href="country-china.html" class="risk-item risk-link">
                             <span class="risk-country">China</span>
                             <span class="risk-level medium">Medium-High</span>
                             <span class="risk-detail">Rare earths refining: environmental, opacity. Click for full report.</span>
                         </a>
-                        <a href="country-bolivia.html" class="risk-item risk-link" target="_blank">
+                        <a href="country-bolivia.html" class="risk-item risk-link">
                             <span class="risk-country">Bolivia</span>
                             <span class="risk-level medium">Medium</span>
                             <span class="risk-detail">Lithium: community displacement, water stress. Click for full report.</span>
                         </a>
-                        <a href="country-zimbabwe.html" class="risk-item risk-link" target="_blank">
+                        <a href="country-zimbabwe.html" class="risk-item risk-link">
                             <span class="risk-country">Zimbabwe</span>
                             <span class="risk-level medium">Medium</span>
                             <span class="risk-detail">Lithium, diamonds: governance, labor. Click for full report.</span>
                         </a>
                     </div>
                 </div>
+                <div class="dashboard-card wide">
+                    <span class="dashboard-card-kicker">Product view</span>
+                    <h3>Clean Energy Products & Material Footprints</h3>
+                    <div class="product-dashboard-list">
+                        <div class="product-dashboard-item">
+                            <span class="product-dashboard-name">EV Battery</span>
+                            <span class="product-dashboard-materials">Lithium, nickel, cobalt, graphite</span>
+                            <span class="product-dashboard-sources">DRC, Indonesia, Chile, Argentina, Australia, China, Mozambique</span>
+                        </div>
+                        <div class="product-dashboard-item">
+                            <span class="product-dashboard-name">Solar Panel</span>
+                            <span class="product-dashboard-materials">Silicon, silver, copper, aluminium</span>
+                            <span class="product-dashboard-sources">China, Chile, Peru, Mexico, Guinea, Australia, United States</span>
+                        </div>
+                        <div class="product-dashboard-item">
+                            <span class="product-dashboard-name">Wind Turbine</span>
+                            <span class="product-dashboard-materials">Rare earths, copper, steel, zinc</span>
+                            <span class="product-dashboard-sources">China, Australia, Chile, Peru, Brazil, South Africa, United States, Myanmar</span>
+                        </div>
+                        <div class="product-dashboard-item">
+                            <span class="product-dashboard-name">Power Grid</span>
+                            <span class="product-dashboard-materials">Copper, aluminium, steel, zinc</span>
+                            <span class="product-dashboard-sources">Chile, Peru, Guinea, Australia, Brazil, China, India, United States</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="dashboard-card">
-                    <h3>Key Minerals & Sources</h3>
+                    <span class="dashboard-card-kicker">Material view</span>
+                    <h3>Key Materials & Sources</h3>
                     <ul class="mineral-sources">
-                        <li>Cobalt: DRC (~70%), Indonesia, Australia</li>
-                        <li>Lithium: Australia, Chile, China, Argentina</li>
-                        <li>Rare Earths: China, Myanmar, Australia</li>
-                        <li>Nickel: Indonesia, Philippines, Russia</li>
-                        <li>Graphite: China, Mozambique, Madagascar</li>
+                        <li><strong>Lithium:</strong> Chile, Argentina, Australia, China</li>
+                        <li><strong>Nickel:</strong> Indonesia, Australia</li>
+                        <li><strong>Cobalt:</strong> DRC, Indonesia, Australia, China processing</li>
+                        <li><strong>Graphite:</strong> China, Mozambique</li>
+                        <li><strong>Rare earths:</strong> China, Australia, Myanmar</li>
+                        <li><strong>Copper:</strong> Chile, Peru, China, United States</li>
+                        <li><strong>Aluminium / Bauxite:</strong> Guinea, Australia, China, India</li>
+                        <li><strong>Steel / Iron Ore:</strong> Brazil, Australia, China, India, South Africa</li>
                     </ul>
                 </div>
                 <div class="dashboard-card">
-                    <h3>Key Importing Countries</h3>
-                    <ul class="mineral-sources">
-                        <li>China: Cobalt, lithium, nickel, rare earths, graphite</li>
-                        <li>United States: Cobalt, lithium, copper, rare earths</li>
-                        <li>Japan: Cobalt, lithium, nickel, rare earths</li>
-                        <li>South Korea: Lithium, cobalt, nickel</li>
-                        <li>European Union: Cobalt, lithium, rare earths</li>
-                    </ul>
-                </div>
-                <div class="dashboard-card">
-                    <h3>Policy Updates</h3>
+                    <span class="dashboard-card-kicker">Responsible sourcing</span>
+                    <h3>Supply Chain Questions</h3>
                     <ul class="policy-list">
+                        <li>How can battery supply grow without putting local environments and communities at risk?</li>
+                        <li>How can solar energy grow quickly while making supply chains cleaner and fairer?</li>
+                        <li>How can wind energy expand while making material supply chains more responsible and circular?</li>
+                        <li>Can clean energy scale without creating new pressures through grid supply chains?</li>
+                    </ul>
+                </div>
+                <div class="dashboard-card wide">
+                    <span class="dashboard-card-kicker">Policy watch</span>
+                    <h3>Policy Updates</h3>
+                    <ul class="policy-list policy-list-links">
                         <li><a href="https://commission.europa.eu/news-and-media/news/new-measures-secure-raw-materials-and-strengthen-eus-economic-security-2025-12-03_en" target="_blank" rel="noopener">EU: RESourceEU Action Plan adopted December 2025</a></li>
                         <li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R1561" target="_blank" rel="noopener">EU: Battery due diligence postponed to August 2027</a></li>
                         <li><a href="https://www.govtrack.us/congress/bills/119/s2550/text" target="_blank" rel="noopener">U.S.: Critical Minerals Partnership Act (S. 2550)</a></li>
